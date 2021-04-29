@@ -4,27 +4,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: background-efect forwards 1s;
-    animation-delay: 2.5s;
     background-color: var(--color--secondary);
 }
 .index__container--logo{
     width: 600px;
     height: 600px;
 }
-.index__container--logo .text{
-    fill: var(--color--tertiary);
-    animation: text-efect 2.5s;
-    opacity: 1;
+.index__container--logo #circle{
+    opacity: 0;
+    fill: none;
+    stroke: #304056;
+    stroke-width: 30;
+    stroke-dasharray: 0 3268; /*3268 max permietro del circulo*/
+    stroke-dashoffset: 817;
+    animation: circle-animation 1s linear forwards;
 }
-.index__container--logo .circle{
-    fill: var(--color--tertiary);
-    animation: circle-efect 2.5s;
-    transform-origin: center center;
+.index__container--logo .text{
+    opacity: 0;
+    animation: fadein .8s linear forwards 1s;
+    fill: var(--color--primary);
 }
 .index__menu{
-    animation: menu-efect 1s forwards;
-    animation-delay: 3s;
+    animation: menu-efect 1s forwards 1.2s;
     opacity: 0;
     width: 0px;
     padding: 0;
@@ -33,7 +34,7 @@
     margin-left: -38px;
 }
 .index__menu--item{
-    color: var(--color--tertiary);
+    color: var(--color--primary);
     margin: 80px 0px;
     font-size: 25px;
     text-transform: uppercase;
@@ -45,7 +46,7 @@
 }
 .index__container a{
     text-decoration: none !important;
-    color: var(--color--tertiary) !important;
+    color: var(--color--primary) !important;
     font-weight: bolder;
 }
 @media(max-width: 768px){
@@ -67,22 +68,17 @@
         margin-left: 0px;
     }
 }
-
-@keyframes circle-efect{
-    0%{ fill: var(--color--primary); transform: rotate(45deg) scale(.5);}
-    50%{ fill: var(--color--tertiary);}
-    100%{ fill: var(--color--primary); transform: rotate(360deg) scale(1);}
+/* Efects */
+@keyframes circle-animation {
+    to{
+        stroke-dasharray: 2451 817;
+        opacity: 1;
+    }
 }
-@keyframes text-efect{
-    0%{ fill: var(--color--primary); opacity: 0;}
-    10%{ opacity: 0;}
-    50%{ fill: var(--color--tertiary); opacity: 0;}
-    75%{ opacity: 0;}
-    100%{ fill: var(--color--primary); opacity: 1;}
-}
-@keyframes background-efect {
-    0%{background-color: var(--color--secondary);}
-    100%{background-color: var(--color--primary);}
+@keyframes fadein {
+    to{
+        opacity: 1;
+    }
 }
 @keyframes menu-efect {
     0%{opacity: 0;}
