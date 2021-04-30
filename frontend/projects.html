@@ -6,70 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/projecs.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="./node_modules/imagehover.css/css/imagehover.min.css"> -->
 </head>
-<body style="background-color:#fff;">
-
-  <style>
-    .projects{
-      margin-top: 15px;
-    }
-    .project-container{
-      margin-bottom: 15px;
-    }
-    .project-container figure {
-      position: relative;
-    }
-    .project-container figure figcaption {
-      text-align: left;
-      position: absolute;
-      min-width: 3px;
-      bottom: 0px;
-      left: 0px;
-      padding: .5rem .5rem 0.5rem .5rem;
-      background-color: var(--color--tertiary);
-      border-top-right-radius: 30px;
-      transition: 1s;
-    }
-    .project-container figure figcaption h2 {
-      display: inline;
-      font-size: 1rem;
-    }
-    .project-container figure figcaption span {
-      max-width: 0;
-      float: right;
-      transition: .2s;
-      overflow: hidden;
-      opacity: 0;
-    }
-    .project-container figure figcaption span a{
-      text-decoration: none;
-      color: inherit;
-    }
-    .project-container figure:hover figcaption {
-      border-radius: 0;
-      min-width: 100%;
-      transition: 1s;
-    } 
-    .project-container figure:hover figcaption span {
-      max-width: 500px;
-      transition: 2s;
-      opacity: 1;
-    }
-    /* .imghvr-shutter-in-out-horiz figcaption {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-    @media(max-width: 768px){
-      .imghvr-shutter-in-out-horiz figcaption {
-        font-size: .7rem;
-      }
-    } */
-  </style>
-  
-
+<body>
 
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -84,20 +25,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
             <li class="nav-item">
               <a class="nav-link" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Proyectos</a>
+              <a class="nav-link active" href="projects.html">Proyectos</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Estudio</a>
+              <a class="nav-link" href="about.html">Estudio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="contact.html">Contacto</a>
             </li>
           </ul>
         </div>
