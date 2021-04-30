@@ -30,6 +30,7 @@ a{
     position: absolute;
     width: 150px;
     height: auto;
+    z-index: 10000000000000;
 }
 .navbar-nav{
     border-bottom: solid 3px #304056;
