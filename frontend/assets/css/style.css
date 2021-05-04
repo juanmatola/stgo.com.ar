@@ -33,7 +33,7 @@ a{
     height: auto;
     padding: 0 !important;
     margin: 0 !important;
-    border-radius: 0px 0px 50% 50%;
+    border-radius: 50%;
     z-index: 10000000000000;
 }
 .navbar-nav{
