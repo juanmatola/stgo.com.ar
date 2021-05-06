@@ -13,6 +13,7 @@
     --color--tertiary: #D29F8C;
     --color--tertiary-o: #d29f8cc7;
 }
+/* General */
 h1,h2,h3,h4,h5,h6 {
     font-family: 'lexend-bold' !important;
     color: var(--color--primary);
@@ -23,6 +24,7 @@ body{
 a{
     text-decoration: none;
 }
+/* Navbar */
 .navbar-brand {
     background-color: var(--color--secondary);
     position: absolute;
@@ -34,7 +36,7 @@ a{
     padding: 0 !important;
     margin: 0 !important;
     border-radius: 50%;
-    z-index: 10000000000000;
+    z-index: 1050;
 }
 .navbar-nav{
     border-bottom: solid 3px #304056;
@@ -53,12 +55,53 @@ a{
     color: var(--color--tertiary) !important;
     font-weight: 900;
 }
-
+/* Contact modal */
+#contactModal .modal-content{
+    border-radius: 30px;
+    overflow: hidden;
+}
+#contactModal .modal-body{
+    padding: 0;
+}
+#contactModal .modal-body .card-image{
+    background-image: url('../img/stgo-card.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#contactModal .modal-header{
+    border: none;
+}
+#contactModal .contact__info {
+    margin: 1rem 0 3rem 0;
+}
+#contactModal .contact__info .contact__info--item {
+    margin: 1rem 0;
+}
+#contactModal .contact__info .address span {
+    color: var(--color--tertiary);
+    font-weight: bolder;
+}
+#contactModal .contact__info .address p {
+    margin: 0;
+}
+#contactModal .contact__info .icons {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Media queries */
 @media(max-width: 768px){
     .navbar-brand {
         width: 80px;
     }
     .navbar-nav{
         border: none;
+    }
+    .modal-body .card-image{
+        min-height: 100px;
     }
 }

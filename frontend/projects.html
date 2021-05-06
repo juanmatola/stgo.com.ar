@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/projecs.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="./node_modules/imagehover.css/css/imagehover.min.css"> -->
+
+    <!-- Fontawesome kit -->
+    <script src="https://kit.fontawesome.com/4657d46491.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -37,7 +39,7 @@
               <a class="nav-link" href="about.html">Estudio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contacto</a>
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contacto</a>
             </li>
           </ul>
         </div>
@@ -148,11 +150,57 @@
     Copyright © STGO 2021
   </footer>
 
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+              
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="col-12 col-md-6 card-image">
+                        <!-- image -->
+                      </div>
+                      <div class="col-12 col-md-6">
+                          <div class="modal-header">
+                              <h5 class="modal-title h2" id="contactModalLabel">Contactanos</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="contact__info d-flex flex-column justify-content-around">
+                              <div class="contact__info--item d-flex flex-row align-items-center">
+                                  <span class="icons"><i class="fa fa-map-marker"></i></span>
+                                  <div class="address text-left"> 
+                                      <span>Dirección</span>
+                                      <p>Santiago 462<br><span class="small" style="font-weight: inherit; color: inherit;">De 9 a 18hs con cita previa</span></p>
+                                  </div>
+                              </div>
+                              <div class="contact__info--item  d-flex flex-row align-items-center mt-3">
+                                  <span class="icons"><i class="fa fa-phone"></i></span>
+                                  <div class="address text-left"> 
+                                      <span>Teléfono</span>
+                                      <p>+54 9 3415 11-7107 <a href="https://wa.me/5493415117107/?text=Hola" style="margin: 0 0 0 50px; color: inherit; font-size: 1.3rem;"><i class="fab fa-whatsapp"></i></a></p>
+                                  </div>
+                              </div>
+                              <div class="contact__info--item  d-flex flex-row align-items-center mt-3">
+                                  <span class="icons"><i class="fa fa-envelope"></i></span>
+                                  <div class="address text-left"> 
+                                      <span>E-mail</span>
+                                      <p>estudio@stgo.com.ar</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- Contact Modal --> 
+  
   <script>
     let navLogo = document.getElementById('navLogo')
     window.addEventListener('scroll', () => {console.log('hiciste scroll')})
   </script>
 
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
