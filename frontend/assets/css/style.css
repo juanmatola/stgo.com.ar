@@ -27,19 +27,16 @@ a{
 /* Navbar */
 .navbar-brand {
     background-color: var(--color--secondary);
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 0px;
     width: 150px;
     height: auto;
     padding: 0 !important;
     margin: 0 !important;
-    border-radius: 50%;
+    transform: translateX(-12px);
     z-index: 1050;
 }
 .navbar-nav{
-    border-bottom: solid 3px #304056;
+    flex-direction: column !important;
+    text-align: end;
 }
 .navbar .navbar-toggler {
     border-radius: 50%;
@@ -100,6 +97,7 @@ a{
     }
     .navbar-nav{
         border: none;
+        text-align: start;
     }
     .modal-body .card-image{
         min-height: 100px;
