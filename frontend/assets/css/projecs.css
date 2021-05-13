@@ -1,8 +1,9 @@
-.projects{
+  .projects{
     margin-top: 15px;
+    padding-top: 45px;
   }
   .project-container{
-    margin-bottom: 15px;
+    margin-bottom: .5rem;
   }
   .project-container figure {
     position: relative;
