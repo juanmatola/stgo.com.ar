@@ -37,6 +37,7 @@ a{
 .navbar-nav{
     flex-direction: column !important;
     text-align: end;
+    text-transform: uppercase;
 }
 .navbar .navbar-toggler {
     border: none;
