@@ -39,11 +39,14 @@ a{
     text-align: end;
 }
 .navbar .navbar-toggler {
-    border-radius: 50%;
+    border: none;
     padding: .3rem .3rem;
 }
 .navbar .navbar-toggler:focus{
     box-shadow: none;
+}
+.navbar .navbar-toggler svg{
+    fill: var(--color--primary);
 }
 .navbar a:hover{
     color: var(--color--tertiary) !important;
