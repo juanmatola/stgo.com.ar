@@ -49,6 +49,9 @@ a{
 .navbar .navbar-toggler svg{
     fill: var(--color--primary);
 }
+.navbar div:first-child {
+    padding-right: 0 !important;
+}
 .navbar a:hover{
     color: var(--color--tertiary) !important;
 }
