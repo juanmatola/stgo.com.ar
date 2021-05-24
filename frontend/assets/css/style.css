@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'lexend-light';
-    src: url('./fonts/Lexend-Medium.ttf');
+    font-family: 'montserrat-light';
+    src: url('./fonts/Montserrat-Light.ttf');
 }
 @font-face {
-    font-family: 'lexend-bold';
-    src: url('./fonts/Lexend-Bold.ttf');
+    font-family: 'montserrat-medium';
+    src: url('./fonts/Montserrat-Medium.ttf');
 }
 :root{
     --color--primary: #304056;
@@ -15,11 +15,11 @@
 }
 /* General */
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'lexend-bold' !important;
+    font-family: 'montserrat-medium' !important;
     color: var(--color--primary);
 }
 body{
-    font-family: 'lexend-light' !important;
+    font-family: 'montserrat-light' !important;
 }
 a{
     text-decoration: none;
