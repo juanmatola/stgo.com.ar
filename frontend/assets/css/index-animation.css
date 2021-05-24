@@ -7,8 +7,8 @@
     background-color: var(--color--secondary);
 }
 .index__container--logo{
-    width: 530px;
-    height: 530px;
+    width: 450px;
+    height: 450px;
 }
 .index__container--logo #circle{
     opacity: 0;
@@ -46,7 +46,7 @@
 }
 .index__menu--item a{
     color: var(--color--primary);
-    font-size: 25px;
+    font-size: 22px;
     text-transform: uppercase;
     text-decoration: none;
 }
