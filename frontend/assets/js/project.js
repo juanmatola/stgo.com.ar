@@ -24,5 +24,6 @@ swiper.on('lazyImageReady', (swiper, slideEl, imageEl) => {
 })
 
 let lightbox = GLightbox({
-    selector: '.glightbox'
+    selector: '.glightbox',
+    loop: true,
 });
