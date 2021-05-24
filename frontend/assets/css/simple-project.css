@@ -43,6 +43,10 @@
 }
 .swiper-button-next:after, .swiper-button-prev:after{
   text-shadow: 0 0 3px #fff;
+  background-color: white;
+  border-radius: 50px;
+  padding: 10px 5px 10px 5px;
+  font-size: 30px !important;
 }
 @media(max-width: 768px ) {
   .swiper-pagination-fraction{
