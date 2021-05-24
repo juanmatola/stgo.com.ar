@@ -35,11 +35,11 @@ a{
     height: auto;
     padding: 0 !important;
     margin: 0 !important;
-    transform: translateX(-12px);
+    /* transform: translateX(-12px); */
     z-index: 1050;
 }
 .navbar-nav{
-    flex-direction: column !important;
+    /* flex-direction: column !important; */
     text-align: end;
     text-transform: uppercase;
 }
