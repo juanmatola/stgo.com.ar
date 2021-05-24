@@ -4,6 +4,7 @@ import setImageObjectFit from './utilities/logicObjetcFit.js';
 
 let swiper = new Swiper(".mySwiper", {
     lazy: true,
+    loop: true,
     pagination: {
         el: ".swiper-pagination",
         type: "fraction",
@@ -11,6 +12,10 @@ let swiper = new Swiper(".mySwiper", {
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+    },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: false,
     },
 });
 
