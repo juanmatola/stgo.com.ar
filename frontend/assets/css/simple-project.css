@@ -48,9 +48,25 @@
   padding: 10px 5px 10px 5px;
   font-size: 30px !important;
 }
+.mySwiper2 {
+  height: 150px;
+  box-sizing: border-box;
+  padding: 10px 0 !important;
+}
+.mySwiper2 .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.mySwiper2 .swiper-slide-thumb-active {
+  opacity: 1;
+}
 @media(max-width: 768px ) {
   .swiper-pagination-fraction{
     left: 50% !important;
     transform: translate(-50%) !important;
+  }
+  .mySwiper2 {
+    height: 100px;
   }
 }
