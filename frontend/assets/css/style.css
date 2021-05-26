@@ -28,10 +28,11 @@ a{
 .navbar{
     margin-left: 32px;
     margin-right: 32px;
+    padding: 16px 0px !important;
 }
 .navbar-brand {
     background-color: var(--color--secondary);
-    width: 150px;
+    width: 100px;
     height: auto;
     padding: 0 !important;
     margin: 0 !important;
