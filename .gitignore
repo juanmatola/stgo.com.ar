@@ -1,3 +1,5 @@
 node_modules
 frontend/assets/img/about
 contenido/*.jpg
+vendor
+.env
