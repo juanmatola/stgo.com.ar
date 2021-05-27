@@ -10,7 +10,8 @@
     "swiper": "^6.6.1"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-minify-css": "^1.2.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
