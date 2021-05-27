@@ -9,7 +9,9 @@
     "imagehover.css": "^2.0.0",
     "swiper": "^6.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
