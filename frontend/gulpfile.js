@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const { src, dest, parallel, series } = require('gulp');
 const minifycss = require('gulp-minify-css');
-//const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 
 /*
     custom_code
@@ -26,7 +26,7 @@ let custom_code = series(exportCss, exportJs);
 let imageTask = () => {
     console.log('Sending images to production..');
     return src('./assets/img/**/*')
-        //.pipe(imagemin())
+        .pipe(imagemin())
         .pipe(dest('../src/assets/img/'));
 }
 let fontTask = () => {
