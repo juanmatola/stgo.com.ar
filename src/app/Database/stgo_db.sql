@@ -30,11 +30,23 @@ SET time_zone = "+00:00";
 CREATE TABLE `is_post` (
   `id` int(11) NOT NULL,
   `title` varchar(512) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
   `description` text NOT NULL,
-  `image_0` varchar(512) NOT NULL,
-  `image_1` varchar(512) NOT NULL,
-  `image_2` varchar(512) NOT NULL
+  `location` varchar(512) NOT NULL,
+  `startdate` date NOT NULL,
+  `status` varchar(512) NOT NULL,
+  `team` varchar(512) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `is_image`
+--
+
+CREATE TABLE `is_image` (
+  `id` int(11) NOT NULL,
+  `post_id` int NOT NULL,
+  `url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -49,6 +61,10 @@ CREATE TABLE `is_user` (
   `password` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Insercion de usuario admin por defecto
+
+INSERT INTO is_user (username, password)
+VALUES ( 'admin', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec' );
 --
 -- Índices para tablas volcadas
 --
