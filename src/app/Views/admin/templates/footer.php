@@ -104,13 +104,13 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="logoutModalLabel">Está seguro que quiere eliminar este post?</h5>
-            <button class="close" type="btn-button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="logoutModalLabel">Está seguro que quiere eliminar este post?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">Selecciona "Eliminar" si estás listo para deshacerte del post.</div>
             <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
-            <a class="btn btn-outline-danger" id="deleteModalButton" href="#">Eliminar</a>
+                <a class="btn btn-outline-danger" id="deleteModalButton" href="#">Eliminar</a>
             </div>
         </div>
         </div>
@@ -121,8 +121,8 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="logoutModalLabel">Listo para irte?</h5>
-            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="logoutModalLabel">Listo para irte?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">Selecciona "Cerrar Sesión" si estás listo para cerrar sesion.</div>
             <div class="modal-footer">
@@ -138,8 +138,8 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="infoModalLabel">Listo para irte?</h5>
-            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="infoModalLabel">Listo para irte?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="infoModalBody"><!-- Server Response Info by js --></div>
             <div class="modal-footer">
@@ -152,6 +152,7 @@
     <!-- Bootstrap JS + Popper -->
     <script src="<?php echo base_url().'/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' ?>"></script>
     <!-- Modals JS -->
-    <script type="module" src="<?php echo base_url().'/assets/admin/js/panel/modals.js' ?>"></script>
+    <script type="module" src="<?php echo base_url().'/assets/admin/js/panel/infoModals.js' ?>"></script>
+    <script src="<?php echo base_url().'/assets/admin/js/panel/actionModals.js' ?>"></script>
 </body>
 </html>

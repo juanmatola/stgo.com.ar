@@ -1,0 +1,40 @@
+html {
+    scroll-behavior: smooth;
+}
+.scrolltop_btn{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+#infoModalBody{
+    text-align: center;
+}
+#infoModalBody div:first-child {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 5rem;
+}
+
+@media (max-width: 768px){
+    .mobile-none{
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .table-img{
+        max-width: 200px;
+    }
+}
+
+/*pagination*/
+
+.page-item.active .page-link {
+    background-color: #343a40;
+    border-color: unset;
+}
+.page-item .page-link{
+    color: black;
+} 

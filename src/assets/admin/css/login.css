@@ -1,0 +1,27 @@
+.login {
+    height: 100vh;
+    background-image: url('/assets/admin/img/bg-lg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.login__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #ffffffad;
+    border-radius: 30px;
+}
+.login__container--img {
+    max-width: 80vw;
+    width: 200px;
+    height: auto;
+}
+.form__buttons {
+    position: relative;
+}
+.form__buttons a{
+    position: absolute;
+    left: 0;
+}
