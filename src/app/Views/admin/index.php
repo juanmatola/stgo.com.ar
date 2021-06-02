@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-md-6 col-12 text-center text-md-left"><h1>Posts</h1></div>
-    <div class="col-md-6 col-12 text-center text-md-right my-2"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">+ Nuevo Post</button></div>
+    <div class="col-md-6 col-12 text-center text-md-left"><h1>Proyectos</h1></div>
+    <div class="col-md-6 col-12 text-center text-md-right my-2"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">+ Nuevo</button></div>
 </div>
 
 <table class="table table-hover">

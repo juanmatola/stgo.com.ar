@@ -12,7 +12,7 @@
 <body id="page-top">
         <nav class="navbar navbar-expand navbar-light bg-light shadow mb-4">
           <div class="container">
-            <a class="navbar-brand" href="#">Tu Portfolio <small class="text-muted">by athomic</small></a>
+            <a class="navbar-brand" href="#">Administración</a>
             
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
