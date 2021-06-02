@@ -22,8 +22,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addModalLabel">Nuevo Post</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
@@ -51,7 +50,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-success" form="newpostform">Subir</button>
             </div>
             </div>
@@ -65,9 +64,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="updateModalLabel">Editar Post</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="<?php echo base_url().'/admin/panel/save'; ?>" method="post" id="updatepostform" enctype="multipart/form-data">
@@ -94,7 +91,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-success" form="updatepostform">Guardar</button>
             </div>
             </div>
@@ -108,13 +105,11 @@
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="logoutModalLabel">Está seguro que quiere eliminar este post?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
+            <button class="close" type="btn-button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">Selecciona "Eliminar" si estás listo para deshacerte del post.</div>
             <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
             <a class="btn btn-outline-danger" id="deleteModalButton" href="#">Eliminar</a>
             </div>
         </div>
@@ -127,13 +122,11 @@
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="logoutModalLabel">Listo para irte?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">Selecciona "Cerrar Sesión" si estás listo para cerrar sesion.</div>
             <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
             <a class="btn btn-outline-success" href="<?php echo base_url().'/admin/logout';?>">Cerrar Sesión</a>
             </div>
         </div>
@@ -146,23 +139,19 @@
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="infoModalLabel">Listo para irte?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="infoModalBody"><!-- Server Response Info by js --></div>
             <div class="modal-footer">
-            <button class="btn btn-outline-success" type="button" data-dismiss="modal">Ok!</button>
+            <button class="btn btn-outline-success" type="button" data-bs-dismiss="modal">Ok!</button>
             </div>
         </div>
         </div>
     </div>
 
-    <!-- JQuery -->
-    <script src="<?php echo base_url().'/assets/libs/jquery-3.5.1/jquery.min.js' ?>"></script>
     <!-- Bootstrap JS + Popper -->
     <script src="<?php echo base_url().'/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' ?>"></script>
     <!-- Modals JS -->
-    <script src="<?php echo base_url().'/assets/admin/js/panel/modals.js' ?>"></script>
+    <script type="module" src="<?php echo base_url().'/assets/admin/js/panel/modals.js' ?>"></script>
 </body>
 </html>
