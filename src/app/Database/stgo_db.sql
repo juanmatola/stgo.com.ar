@@ -76,10 +76,17 @@ ALTER TABLE `is_post`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `is_image`
+--
+ALTER TABLE `is_image`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `is_user`
 --
 ALTER TABLE `is_user`
   ADD PRIMARY KEY (`id`);
+
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
