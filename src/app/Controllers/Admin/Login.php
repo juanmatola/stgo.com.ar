@@ -15,8 +15,8 @@ class Login extends BaseAdminController
 		/* Recibo datos del formulario */
 		$req = $this->request;
 		$formData = array(
-			'username'=>$req->getPostGet('username'),
-			'password'=>$req->getPostGet('password')
+			'username'=>$this->cleanStringInput($req->getPostGet('username')),
+			'password'=>$this->cleanStringInput($req->getPostGet('password'))
 		);
 	
 		if($this->userValidation($formData)){
