@@ -16,11 +16,11 @@
             
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropleft">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img class="img-fluid rounded-circle" width="30px" src="https://cdn.pixabay.com/photo/2016/03/31/17/33/account-1293744_960_720.png">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $username;?></span>
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="img-fluid rounded-circle" width="30px" src="https://cdn.pixabay.com/photo/2016/03/31/17/33/account-1293744_960_720.png">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $username;?></span>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/" ><i class="fas fa-globe-americas"></i> Tu sitio</a>
