@@ -1,15 +1,18 @@
 <div class="row">
-    <div class="col-md-6 col-12 text-center text-md-left"><h1>Proyectos</h1></div>
+    <div class="col-md-6 col-12 text-left"><h1>Proyectos</h1></div>
     <div class="col-md-6 col-12 text-center text-md-right my-2"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">+ Nuevo</button></div>
 </div>
 
 <table class="table table-hover">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Id</th>
       <th scope="col">Título</th>
+      <th scope="col">Ubicación</th>
+      <th scope="col">Inicio</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Equipo</th>
       <th class="mobile-none" scope="col">Descripción</th>
-      <th scope="col">Imagenes</th>
+      <th scope="col">Imagen</th>
       <th scope="col">Acción</th>
     </tr>
   </thead>
@@ -17,6 +20,9 @@
   <?php foreach ($posts as $post) { ?>
     <tr>
       <th scope="row"><?php echo $post['id'];?></th>
+      <td><?php echo $post['title']; ?></td>
+      <td><?php echo $post['title']; ?></td>
+      <td><?php echo $post['title']; ?></td>
       <td><?php echo $post['title']; ?></td>
       <td class="mobile-none"><?php echo $post['description']; ?></td>
       <td class="table-img">
