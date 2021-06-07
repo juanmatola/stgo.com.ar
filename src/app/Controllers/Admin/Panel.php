@@ -1,6 +1,7 @@
 <?php namespace App\Controllers\Admin;
 
 use App\Models\PostsModel;
+use App\Models\ImagesModel;
 
 class Panel extends BaseAdminController
 {
@@ -38,7 +39,7 @@ class Panel extends BaseAdminController
         }
     }
 
-    public function savePost(){                   //REFACTORIZAR generacion de $postData
+    public function savePost(){                   //
         
         \session_start();
         if (!$this->sessionStatus()) {
@@ -70,51 +71,38 @@ class Panel extends BaseAdminController
 
         
         //ACTION SELECTOR
-        
         if(isset($data['id'])){
             echo'>update<br>';
             //$this->updatePost($data);
         }else {
-            echo'>insert<br>';
             $res = $this->newPost($data, $files);
-
-            echo $res;
-            //return redirect()->to(base_url()."/admin/panel?insert={$res}");
+            return redirect()->to(base_url()."/admin/panel?insert={$res}");
         }
 
         // ----------------------------------------------------------------------------------------------
     }
 
     public function newPost($data, $files){ //Return STRING ('success' || 'input_err' || 'file_err')
-        echo '<br>>>NEW POST<br>';
-
-        $error = 'none';
+        $res = 'success';
 
         //DATA VALIDATION
         foreach ($data as $input) {
             if (empty($input) || !\is_string($input)) {
-                $error = 'input_err';
+                $res = 'input_err';
             }
         }
 
-        if ($error === 'none') {
+        if ($res === 'success') {
             $postsModel = new PostsModel();
             $postID = $postsModel->insert($data);
-
-            echo "post id: {$postID}";
-
-            $this->uploadImages($postID, $files);
-
-            return 'success';
-
-        }else {
-            echo '<br>*-------*<br>';
-            echo '> error';
-            echo '<br>*-------*<br>';
-            return $error;
+            $res = $this->uploadImages($postID, $files);
+            
+            if ($res != 'success') {
+                $postsModel->delete($postID);
+            }
         }
 
-        
+        return $res;
     }
 
     public function updatePost($data){
@@ -147,11 +135,8 @@ class Panel extends BaseAdminController
     }
 
     public function uploadImages($postID, $files){
-        echo '<br>>>>Upload Images<br>';
-
-
+       
         if($files){
-
             $images = array_slice($files['images'],0,$this->maxImages);
 
             foreach($images as $key => $img){
@@ -163,17 +148,23 @@ class Panel extends BaseAdminController
                                         'post_id' => $postID,
                                         'url' => $imgName,
                                     );
-
-                    //llamada a modelo de imagenes y realizar insercion de $imgData
+                    $imageModel = new ImagesModel();
+                    $imageModel->insert($imgData);
             
                 }else{
+
+                    $uploadedImages = $imageModel->where('post_id', $postID)
+                                                 ->findColumn('url');
+                    foreach ($uploadedImages as $url) {
+                        $this->deleteFile($url);
+                    }
+                    $imageModel->deleteByPostId($postID);
+
                     return "file_err";
-                    exit;
                 }
             }
-
+            return 'success';
         }
-
 
     }
     
