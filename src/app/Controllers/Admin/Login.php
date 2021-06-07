@@ -6,8 +6,13 @@ class Login extends BaseAdminController
 {
     public function index()
     {
-        helper('form');
 		session_start();
+		if ($this->sessionStatus()) {
+			return redirect()->to(base_url().'/admin/panel/');
+			exit;
+		}
+		
+		helper('form');
 		echo view('admin/login');
     }
 
