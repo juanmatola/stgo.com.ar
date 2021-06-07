@@ -117,17 +117,20 @@ class Panel extends BaseAdminController
 			exit;
 		}
 
-        $id = $this->request->getGet('id');
+        $postID = $this->request->getGet('id');
 
-        if (isset($id) && $id != '') {
+        if (isset($postID) && $postID != '') {
 			$postsModel = new PostsModel();
+            $imageModel = new ImagesModel();
 
-            for ($index=0; $index < 3; $index++) {
-                $imgName = $postsModel->find($id)["image_{$index}"];
-                $this->deleteFile($imgName);
+            if($uploadedImages = $imageModel->where('post_id', $postID)->findColumn('url')) {
+                foreach ($uploadedImages as $url) {
+                    $this->deleteFile($url);
+                }
+                $imageModel->deleteByPostId($postID);
             }
 
-			$postsModel->delete($id);
+			$postsModel->delete($postID);
 			return redirect()->to(base_url().'/admin/panel?delete=success');
 		}
 		
