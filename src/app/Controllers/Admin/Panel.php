@@ -82,7 +82,7 @@ class Panel extends BaseAdminController
         // ----------------------------------------------------------------------------------------------
     }
 
-    public function newPost($data, $files){ //Return STRING ('success' || 'input_err' || 'file_err')
+    public function newPost($data, $files){       //Return STRING ('success' || 'input_err' || 'file_err')
         $res = 'success';
 
         //DATA VALIDATION
@@ -109,7 +109,7 @@ class Panel extends BaseAdminController
         echo '<br>>UPDATE POST<br>';
     }
 
-    public function deletePost(){
+    public function deletePost(){                //Return REDIRECT
 
         \session_start();
         if (!$this->sessionStatus()) {
@@ -136,6 +136,15 @@ class Panel extends BaseAdminController
 		
 		return redirect()->to(base_url().'/admin/panel?delete=err');
     }
+
+    //UTILITIES
+    private function fileValidation($file) {     //Return BOOLEAN
+		if ($file->getSize() < $this->maxSize && in_array($file->getExtension(), $this->allowedExtensions)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 
     public function uploadImages($postID, $files){ //Return STRING ('success' || 'file_err')
        
@@ -169,15 +178,6 @@ class Panel extends BaseAdminController
         }
 
     }
-    
-    //UTILITIES
-    private function fileValidation($file) {     //Return BOOLEAN
-		if ($file->getSize() < $this->maxSize && in_array($file->getExtension(), $this->allowedExtensions)) {
-			return true;
-		}else {
-			return false;
-		}
-	}
 
     private function saveImage($img){            //Return STRING
         $name = $img->getRandomName();
