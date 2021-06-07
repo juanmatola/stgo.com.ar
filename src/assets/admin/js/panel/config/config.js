@@ -1,5 +1,5 @@
 let possibleResponses = {
-    insert: {ok: 'success', err: 'file_err'},
+    insert: {ok: 'success', err: { file : 'file_err', input: 'input_err'} },
     delete: {ok: 'success', err: 'err'},
 };
 let icons = {

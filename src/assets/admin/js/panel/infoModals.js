@@ -14,8 +14,12 @@ if (!(url.search === '')){
             infoModal.show('Éxito', 'Los datos se han guardado correctamente.', icons.ok);
         break;
     
-        case possibleResponses.insert.err:
+        case possibleResponses.insert.err.file:
             infoModal.show('Ups..', 'Asegurate de que el archivo que intentas subir: <br><br> - Pesa menos de 3Mb. <br><br> - Es un archivo permitido (.png , .jpeg, .jpg).', icons.err);
+        break;
+
+        case possibleResponses.insert.err.input:
+            infoModal.show('Ups..', 'Asegurate de que ingresaste los datos de proyecto correctamente <br>', icons.err);
         break;
 
         default:
