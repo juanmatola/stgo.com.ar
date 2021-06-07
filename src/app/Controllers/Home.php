@@ -4,8 +4,14 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		echo '> Home_Controller';
-		return view('home');
+		
+		$data = [
+			'page' => 'index',
+		];
+
+		echo view('templates/header', $data);
+		echo view('home');
+		echo view('templates/footer', $data);
 	}
 
 	//--------------------------------------------------------------------
