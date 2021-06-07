@@ -21,13 +21,6 @@ class PostsModel extends Model
                      ->find();
     }
 
-    public function getPostsByCategory($category_id)
-    {
-        return $this->where('category_id', $category_id)
-                    ->orderBy('id', 'DESC')
-                    ->findAll();
-    }
-
     public function getPostById($post_id)
     {
         return $this->find($post_id);
