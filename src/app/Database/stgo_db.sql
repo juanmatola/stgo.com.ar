@@ -32,7 +32,7 @@ CREATE TABLE `is_post` (
   `title` varchar(512) NOT NULL,
   `description` text NOT NULL,
   `location` varchar(512) NOT NULL,
-  `startdate` date NOT NULL,
+  `startdate` varchar(512) NOT NULL,
   `status` varchar(512) NOT NULL,
   `team` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
