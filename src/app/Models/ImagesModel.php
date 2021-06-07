@@ -14,4 +14,9 @@ class ImagesModel extends Model
         return $this->where('post_id', $post_id)
                     ->findAll();
     }
+    public function deleteByPostId($post_id)
+    {
+        return $this->where('post_id', $post_id)
+                    ->delete();
+    }
 }
