@@ -8,6 +8,8 @@ class Panel extends BaseAdminController
 	private $uploadPostPath = './writable/uploads/portfolio/';
 	private $allowedExtensions = array('jpg','jpeg','png');
 	private	$maxSize = 3000000; // Bytes 
+	private	$maxImages = 10; // Units
+
 
     public function index(){                      //INDEX
         \session_start();
@@ -44,48 +46,79 @@ class Panel extends BaseAdminController
 			exit;
 		}
 
-		$postsModel = new PostsModel();
-
+        //DATA RECEIVING
         $req = $this->request;
+        $files = $this->request->getFiles();
 
-        $id = $req->getGet('id');
-        $description = $req->getPost('description');
-
-		$postData = array(
-			'title'=>$req->getPost('title'),
-            'category_id'=>$req->getPost('category'),
-		);
-        $postData = (!empty($description)) ? $postData + array('description' => $description) : $postData;
-        $postData = (isset($id)) ? array('id' => $id) + $postData : $postData;
-
-        if($files = $this->request->getFiles()){
-
-            $images = array_slice($files['images'],0,3);
-
-            foreach($images as $key => $img){
-
-                if ($img->isValid() && ! $img->hasMoved()){
-                    
-                    if ($this->fileValidation($img)){
-
-                        $imgName = $this->saveImage($img);
-                        (isset($id)) ? $this->deleteFile($postsModel->find($id)["image_{$key}"]) : NULL;
-                        $postData = $postData + array("image_{$key}" => $imgName);
-
-                    }else{
-                        return redirect()->to(base_url().'/admin/panel?insert=file_err');
-                        exit;
-                    }
-                }else if(!isset($id)) {
-                    return redirect()->to(base_url().'/admin/panel?insert=file_err');
-                    exit;
-                }
+        //ID VALIDATION
+        if(!preg_match('/\D/', $req->getGet('id'))){
+            if ($req->getGet('id') !== null && !empty($req->getGet('id'))) {
+                $data['id'] = $req->getGet('id');
             }
-
+        }else {
+            echo 'Id invalido, reject';
+            return redirect()->to(base_url()."/admin/panel?insert=id_err");
         }
 
-        $postsModel->save($postData);
-        return redirect()->to(base_url().'/admin/panel?insert=success');
+        //ORGANIC DATA
+        $data['title'] = $req->getPost('title');
+        $data['description'] = $req->getPost('description');
+        $data['location'] = $req->getPost('location');
+        $data['startdate'] = $req->getPost('startdate');
+        $data['status'] = $req->getPost('status');
+        $data['team'] = $req->getPost('team');
+
+        
+        //ACTION SELECTOR
+        
+        if(isset($data['id'])){
+            echo'>update<br>';
+            //$this->updatePost($data);
+        }else {
+            echo'>insert<br>';
+            $res = $this->newPost($data, $files);
+
+            echo $res;
+            //return redirect()->to(base_url()."/admin/panel?insert={$res}");
+        }
+
+        // ----------------------------------------------------------------------------------------------
+    }
+
+    public function newPost($data, $files){ //Return STRING ('success' || 'input_err' || 'file_err')
+        echo '<br>>>NEW POST<br>';
+
+        $error = 'none';
+
+        //DATA VALIDATION
+        foreach ($data as $input) {
+            if (empty($input) || !\is_string($input)) {
+                $error = 'input_err';
+            }
+        }
+
+        if ($error === 'none') {
+            $postsModel = new PostsModel();
+            $postID = $postsModel->insert($data);
+
+            echo "post id: {$postID}";
+
+            $this->uploadImages($postID, $files);
+
+            return 'success';
+
+        }else {
+            echo '<br>*-------*<br>';
+            echo '> error';
+            echo '<br>*-------*<br>';
+            return $error;
+        }
+
+        
+    }
+
+    public function updatePost($data){
+        echo '<br>>UPDATE POST<br>';
     }
 
     public function deletePost(){
@@ -112,8 +145,39 @@ class Panel extends BaseAdminController
 		
 		return redirect()->to(base_url().'/admin/panel?delete=err');
     }
+
+    public function uploadImages($postID, $files){
+        echo '<br>>>>Upload Images<br>';
+
+
+        if($files){
+
+            $images = array_slice($files['images'],0,$this->maxImages);
+
+            foreach($images as $key => $img){
+
+                if ($img->isValid() && !$img->hasMoved() && $this->fileValidation($img)){
+                    
+                    $imgName = $this->saveImage($img);
+                    $imgData = array(   
+                                        'post_id' => $postID,
+                                        'url' => $imgName,
+                                    );
+
+                    //llamada a modelo de imagenes y realizar insercion de $imgData
+            
+                }else{
+                    return "file_err";
+                    exit;
+                }
+            }
+
+        }
+
+
+    }
     
-    
+    //UTILITIES
     private function fileValidation($file) {     //Return BOOLEAN
 		if ($file->getSize() < $this->maxSize && in_array($file->getExtension(), $this->allowedExtensions)) {
 			return true;
