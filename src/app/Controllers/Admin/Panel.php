@@ -39,7 +39,7 @@ class Panel extends BaseAdminController
         }
     }
 
-    public function savePost(){                   //
+    public function savePost(){                   //New Post - Edit Post
         
         \session_start();
         if (!$this->sessionStatus()) {
@@ -134,11 +134,11 @@ class Panel extends BaseAdminController
 		return redirect()->to(base_url().'/admin/panel?delete=err');
     }
 
-    public function uploadImages($postID, $files){
+    public function uploadImages($postID, $files){ //Return STRING ('success' || 'file_err')
        
         if($files){
             $images = array_slice($files['images'],0,$this->maxImages);
-
+            $imageModel = new ImagesModel();
             foreach($images as $key => $img){
 
                 if ($img->isValid() && !$img->hasMoved() && $this->fileValidation($img)){
@@ -148,17 +148,16 @@ class Panel extends BaseAdminController
                                         'post_id' => $postID,
                                         'url' => $imgName,
                                     );
-                    $imageModel = new ImagesModel();
                     $imageModel->insert($imgData);
             
                 }else{
 
-                    $uploadedImages = $imageModel->where('post_id', $postID)
-                                                 ->findColumn('url');
-                    foreach ($uploadedImages as $url) {
-                        $this->deleteFile($url);
+                    if($uploadedImages = $imageModel->where('post_id', $postID)->findColumn('url')) {
+                        foreach ($uploadedImages as $url) {
+                            $this->deleteFile($url);
+                        }
+                        $imageModel->deleteByPostId($postID);
                     }
-                    $imageModel->deleteByPostId($postID);
 
                     return "file_err";
                 }
