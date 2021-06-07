@@ -7,7 +7,7 @@ class PostsModel extends Model
     protected $table = 'is_post';
     protected $primaryKey = 'id';
     protected $returnType =  'array';
-    protected $allowedFields = ['title','category_id','description','image_0','image_1','image_2'];
+    protected $allowedFields = ['title','description','location','startdate','status','team'];
 
     public function getPosts()
     {
