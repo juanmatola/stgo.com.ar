@@ -12,24 +12,18 @@
       <th scope="col">Estado</th>
       <th scope="col">Equipo</th>
       <th class="mobile-none" scope="col">Descripción</th>
-      <th scope="col">Imagen</th>
       <th scope="col">Acción</th>
     </tr>
   </thead>
   <tbody>
   <?php foreach ($posts as $post) { ?>
     <tr>
-      <th scope="row"><?php echo $post['id'];?></th>
       <td><?php echo $post['title']; ?></td>
-      <td><?php echo $post['title']; ?></td>
-      <td><?php echo $post['title']; ?></td>
-      <td><?php echo $post['title']; ?></td>
+      <td><?php echo $post['location']; ?></td>
+      <td><?php echo $post['startdate']; ?></td>
+      <td><?php echo $post['status']; ?></td>
+      <td><?php echo $post['team']; ?></td>
       <td class="mobile-none"><?php echo $post['description']; ?></td>
-      <td class="table-img">
-        <img src="<?php echo base_url().'/writable/uploads/portfolio/'.$post['image_0']; ?>" class="img-fluid" loading="lazy">
-        <img src="<?php echo base_url().'/writable/uploads/portfolio/'.$post['image_1']; ?>" class="img-fluid" loading="lazy">
-        <img src="<?php echo base_url().'/writable/uploads/portfolio/'.$post['image_2']; ?>" class="img-fluid" loading="lazy">
-      </td>
       <td>
         <!-- <a class="btn btn-danger" href="<?php echo base_url().'/admin/deletepost?id='.$post['id']; ?>" ><i class="far fa-trash-alt"></i></a> -->
         <button type="button" class="btn btn-danger my-2" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="deleteModalOpen('<?php echo $post['id']; ?>')">
