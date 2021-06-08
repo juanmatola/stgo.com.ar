@@ -40,3 +40,17 @@ let lightbox = GLightbox({
     selector: '.glightbox',
     loop: true,
 });
+
+let openGalleryButton = document.getElementById('open-gallery-button');
+let gallery = document.getElementById('gallery');
+let galleryStatus = false;
+
+openGalleryButton.onclick = () => {
+    if (galleryStatus == false) {
+        gallery.classList.replace('gallery-close','gallery-open');
+        galleryStatus = true;
+    }else{
+        gallery.classList.replace('gallery-open','gallery-close');
+        galleryStatus = false;
+    }
+}
