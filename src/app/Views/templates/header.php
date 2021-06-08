@@ -26,7 +26,7 @@
 <?php if($page == 'about'): ?>
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/about.css">                                              
 <?php endif; ?>
-<?php if($page == 'project' || $page == 'simple-project'): ?>
+<?php if($page == 'projects' || $page == 'simple-project'): ?>
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/projecs.css">                                            
 <?php endif; ?> 
 <?php if($page == 'simple-project'): ?>
@@ -40,3 +40,29 @@
     <script src="https://kit.fontawesome.com/4657d46491.js" crossorigin="anonymous"></script>           
 </head>
 <body>
+
+<?php if($page != 'index'): ?>                       
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="<?= base_url() ?>">
+          <div class="navbar-logo">
+            <img src="<?= base_url() ?>/assets/img/logo-menu.png" alt="Stgo Estudio" class="img-fluid" id="navLogo">
+          </div>
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 25 25"><path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"></path></svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link <?php echo $page === 'about' ? 'active' : ''; ?>" href="<?= base_url() ?>/about">Estudio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link <?php echo $page === 'projects' ? 'active' : ''; ?>" href="<?= base_url() ?>/projects">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contacto</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+<?php endif; ?>
