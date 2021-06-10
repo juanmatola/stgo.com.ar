@@ -42,7 +42,7 @@
 <body style="<?php echo ($page == 'index') ? "padding-top:0px" : "" ; ?>" >
 
 <?php if($page != 'index'): ?>                       
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="<?= base_url() ?>">
           <div class="navbar-logo">
             <img src="<?= base_url() ?>/assets/img/logo-menu.png" alt="Stgo Estudio" class="img-fluid" id="navLogo">
