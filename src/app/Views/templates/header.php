@@ -39,7 +39,7 @@
     <!-- Fontawesome kit -->
     <script src="https://kit.fontawesome.com/4657d46491.js" crossorigin="anonymous"></script>           
 </head>
-<body>
+<body style="<?php echo ($page == 'index') ? "padding-top:0px" : "" ; ?>" >
 
 <?php if($page != 'index'): ?>                       
     <nav class="navbar navbar-expand-lg navbar-light">
