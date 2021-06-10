@@ -1,6 +1,6 @@
-.carousel-container{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+.container-fluid{
+    padding-left: 32px !important;
+    padding-right: 32px !important; 
 }
 .carousel{
     height: 80vh;
@@ -93,5 +93,9 @@
     }
     .team-member figcaption p {
         font-size: 16px;
+    }
+    .container-fluid, .container{
+        padding-left: 24px !important;
+        padding-right: 24px !important; 
     }
 }
