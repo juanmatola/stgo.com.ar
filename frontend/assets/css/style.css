@@ -20,6 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 body{
     font-family: 'montserrat-light' !important;
+    padding-top: 72px;
 }
 a{
     text-decoration: none;
@@ -29,6 +30,7 @@ a{
     margin-left: 32px;
     margin-right: 32px;
     padding: 16px 0px !important;
+    background-color: white;
 }
 .navbar-brand {
     background-color: var(--color--secondary);
