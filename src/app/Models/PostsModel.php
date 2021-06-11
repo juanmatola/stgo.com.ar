@@ -11,7 +11,7 @@ class PostsModel extends Model
 
     public function getPreviews()
     {
-        return $this->select('id, title')->find();
+        return $this->select('id, title')->orderBy('id', 'DESC')->find();
     }
 
     public function getRandomPosts($cant)
