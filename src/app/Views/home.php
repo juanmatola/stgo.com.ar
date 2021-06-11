@@ -1,7 +1,7 @@
 <nav class="index__menu">
         <ul>
-            <li class="index__menu--item"><a href="<?= base_url() ?>/about">Estudio</a></li>
-            <li class="index__menu--item"><a href="<?= base_url() ?>/projects">Proyectos</a></li>
+            <li class="index__menu--item"><a href="<?= base_url() ?>/estudio">Estudio</a></li>
+            <li class="index__menu--item"><a href="<?= base_url() ?>/proyectos">Proyectos</a></li>
             <li class="index__menu--item"><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contacto</a></li>
         </ul>
     </nav>

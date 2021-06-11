@@ -54,10 +54,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link <?php echo $page === 'about' ? 'active' : ''; ?>" href="<?= base_url() ?>/about">Estudio</a>
+              <a class="nav-link <?php echo $page === 'about' ? 'active' : ''; ?>" href="<?= base_url() ?>/estudio">Estudio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php echo $page === 'projects' ? 'active' : ''; ?>" href="<?= base_url() ?>/projects">Proyectos</a>
+              <a class="nav-link <?php echo $page === 'projects' ? 'active' : ''; ?>" href="<?= base_url() ?>/proyectos">Proyectos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contacto</a>
