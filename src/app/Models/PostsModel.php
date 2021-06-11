@@ -9,9 +9,9 @@ class PostsModel extends Model
     protected $returnType =  'array';
     protected $allowedFields = ['title','description','location','startdate','status','team'];
 
-    public function getPosts()
+    public function getPreviews()
     {
-        return $this->findAll();
+        return $this->select('id, title')->find();
     }
 
     public function getRandomPosts($cant)
