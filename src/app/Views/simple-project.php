@@ -2,56 +2,20 @@
       <div class="swiper-container mySwiper">
         <div class="swiper-wrapper">
   
+        <?php foreach ($images as $image): ?>
           <div class="swiper-slide">
-            <a href="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-              <img data-src="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="swiper-lazy project-image"/>
+
+            <a href="<?= base_url('writable/uploads/portfolio'); ?>/<?= $image['url'] ?>" class="glightbox" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
+
+              <img data-src="<?= base_url('writable/uploads/portfolio'); ?>/<?= $image['url'] ?>" class="swiper-lazy project-image"/>
+
             </a>
             <!-- Preloader image -->
             <div class="swiper-lazy-preloader"></div>
           </div>
   
-          <div class="swiper-slide">
-            <a href="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-              <img data-src="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="swiper-lazy project-image"/>
-            </a>
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader "></div>
-          </div>
-  
-          <div class="swiper-slide">
-            <a href="https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-              <img data-src="https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="swiper-lazy project-image"/>
-            </a>
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader "></div>
-          </div>
-  
-          <div class="swiper-slide">
-            <a href="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-              <img data-src="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="swiper-lazy project-image"/>
-            </a>
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader "></div>
-          </div>
-  
-          <div class="swiper-slide">
-            <a href="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-              <img data-src="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="swiper-lazy project-image"/>
-            </a>
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader "></div>
-          </div>
-  
-          <div class="swiper-slide">
-            <a href="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-              <img data-src="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="swiper-lazy project-image"/>
-            </a>
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader"></div>
-          </div>
-  
+          <?php endforeach; ?>
         </div>
-  
   
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -70,29 +34,29 @@
             <tbody>
               <tr>
                 <th>Nombre</th>
-                <td>Lorem ipsum</td>
+                <td><?= $post['title'] ?></td>
               </tr>
               <tr>
                 <th>Ubicación</th>
-                <td>Rosario, Santa Fe</td>
+                <td><?= $post['location'] ?></td>
               </tr>
               <tr>
                 <th>Fecha inicio</th>
-                <td>2020</td>
+                <td><?= $post['startdate'] ?></td>
               </tr>
               <tr>
                 <th>Estado</th>
-                <td>En obra</td>
+                <td><?= $post['status'] ?></td>
               </tr>
               <tr>
                 <th>Equipo</th>
-                <td>Michael Pili, Luella Rowen, Gladwin Conor, Candida Verity, Darin Shannen</td>
+                <td><?= $post['team'] ?></td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="col-12 col-md-6 ps-md-4">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non commodi odit quisquam sapiente quis facilis deserunt qui nulla iusto, quasi repudiandae accusantium beatae itaque ratione velit molestias maiores veniam aspernatur eaque voluptas laboriosam dicta! Dolores quia veritatis deleniti mollitia eligendi maxime ratione omnis doloremque dicta non soluta, sunt corrupti explicabo repellat sed aliquid at quisquam alias! Recusandae optio laborum asperiores.</p>
+          <p><?= $post['description'] ?>.</p>
         </div>
       </div>
     </div>
@@ -107,66 +71,17 @@
             </div>
             <div class="modal-body container-fluid" id="gallery">
               <div class="row">
+
+                <?php foreach ($images as $image): ?>  
+
                 <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
+                  <a href="<?= base_url('writable/uploads/portfolio'); ?>/<?= $image['url'] ?>" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
+                    <img src="<?= base_url('writable/uploads/portfolio'); ?>/<?= $image['url'] ?>" class=" gallery-item" alt="">
                   </a>
                 </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/1458876/pexels-photo-1458876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
-                <div class="col-12 col-md-3 my-3 ">
-                  <a href="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="glightbox2" data-glightbox="type: image; effect: fade; width: auto; height: auto; zoomable: true; draggable: true;">
-                    <img src="https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class=" gallery-item" alt="">
-                  </a>
-                </div>
+
+                <?php endforeach; ?>
+
               </div>
             </div>
           </div>

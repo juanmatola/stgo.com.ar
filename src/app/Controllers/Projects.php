@@ -32,4 +32,24 @@ class Projects extends BaseController
 
 	//--------------------------------------------------------------------
 
+	public function show($post_id){
+		$postmodel = new PostsModel();
+		$imagemodel = new ImagesModel();
+
+		$text_data = $postmodel->getPostById($post_id);
+		$images = $imagemodel->getByPostId($post_id);
+
+		$meta = [
+			'page' => 'simple-project',
+			'post' => $text_data,
+		];
+		$data = [
+			'post' => $text_data,
+			'images' => $images,
+		];
+		echo view('templates/header', $meta);
+		echo view('simple-project', $data);
+		echo view('templates/footer', ['page' => 'simple-project']);
+	}
+
 }
