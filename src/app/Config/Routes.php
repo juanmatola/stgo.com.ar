@@ -20,7 +20,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /**
  * --------------------------------------------------------------------
@@ -32,10 +32,10 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/estudio', 'About::index');
-$routes->group('proyectos', function($routes)
+$routes->group('/proyectos', function($routes)
 {
-    //$routes->add('', 'Work::showCategories');
-    //$routes->add('(:segment)', 'Work::index/$1');
+    $routes->add('', 'Projects::index');
+    $routes->add('(:num)', 'Projects::show/$1');
     //$routes->add('(:segment)/(:num)', 'Work::index/$1/$2');
 });
 $routes->group('admin',['namespace' => 'App\Controllers\Admin'], function($routes)
