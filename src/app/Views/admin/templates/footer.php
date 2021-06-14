@@ -50,7 +50,7 @@
                     <div class="col-12 col-md-6 my-3">
                         <label for="newpostform_images">Imágenes</label>
                         <br>
-                        <input type="file" class="form-control-file" id="newpostform_images" name="images[]" accept="image/*" required multiple>
+                        <input type="file" class="form-control-file" id="newpostform_images" name="images[]" accept="image/jpg, image/jpeg, image/png" required multiple>
                     </div>
                     <div class="form-group my-3">
                         <label for="description">Descripción</label>
@@ -76,31 +76,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body container">
-                <form action="<?php echo base_url().'/admin/panel/save'; ?>" class="row h-100 align-items-center" method="post" id="newpostform" enctype="multipart/form-data">
+                <form action="<?php echo base_url().'/admin/panel/save'; ?>" class="row h-100 align-items-center" method="post" id="updatepostform" enctype="multipart/form-data">
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Título</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Título.." required>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Título.." >
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Ubicación</label>
-                        <input type="text" class="form-control" id="location" name="location" placeholder="Ubicación.." required>
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Ubicación.." >
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Fecha de Inicio</label>
-                        <input type="date" class="form-control" id="startdate" name="startdate" required>
+                        <input type="date" class="form-control" id="startdate" name="startdate" >
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Estado de Obra</label>
-                        <input type="text" class="form-control" id="status" name="status" placeholder="Estado.." required>
+                        <input type="text" class="form-control" id="status" name="status" placeholder="Estado.." >
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Equipo</label>
-                        <input type="text" class="form-control" id="team" name="team" placeholder="Estado.." required>
+                        <input type="text" class="form-control" id="team" name="team" placeholder="Estado.." >
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="newpostform_images">Imágenes</label>
                         <br>
-                        <input type="file" class="form-control-file" id="newpostform_images" name="images[]" accept="image/*" required multiple>
+                        <input type="file" class="form-control-file" id="newpostform_images" name="images[]" accept="image/jpg, image/jpeg, image/png"  multiple>
                         <br>
                         <small class="text-muted">Se reemplazarán todas las imágenes previamente cargadas por las nuevas</small>
                     </div>
