@@ -39,6 +39,8 @@ class Panel extends BaseAdminController
         }
     }
 
+    // ----------------------------------------------------------------------------------------------
+    
     public function savePost(){                   //New Post - Edit Post
         
         \session_start();
@@ -62,24 +64,22 @@ class Panel extends BaseAdminController
         }
 
         //ORGANIC DATA
-        $data['title'] = $req->getPost('title');
-        $data['description'] = $req->getPost('description');
-        $data['location'] = $req->getPost('location');
-        $data['startdate'] = $req->getPost('startdate');
-        $data['status'] = $req->getPost('status');
-        $data['team'] = $req->getPost('team');
+        $data['title'] = $this->cleanStringInput($req->getPost('title'));
+        $data['description'] = $this->cleanStringInput($req->getPost('description'));
+        $data['location'] = $this->cleanStringInput($req->getPost('location'));
+        $data['startdate'] = $this->cleanStringInput($req->getPost('startdate'));
+        $data['status'] = $this->cleanStringInput($req->getPost('status'));
+        $data['team'] = $this->cleanStringInput($req->getPost('team'));
 
         
         //ACTION SELECTOR
         if(isset($data['id'])){
-            echo'>update<br>';
-            //$this->updatePost($data);
+            $res = $this->updatePost($data, $files);
         }else {
             $res = $this->newPost($data, $files);
-            return redirect()->to(base_url()."/admin/panel?insert={$res}");
         }
-
-        // ----------------------------------------------------------------------------------------------
+        
+        return redirect()->to(base_url()."/admin/panel?insert={$res}");
     }
 
     public function newPost($data, $files){       //Return STRING ('success' || 'input_err' || 'file_err')
@@ -105,8 +105,26 @@ class Panel extends BaseAdminController
         return $res;
     }
 
-    public function updatePost($data){
-        echo '<br>>UPDATE POST<br>';
+    public function updatePost($data, $files){
+        $res = 'success';
+        $isUpdate = true;
+        $postID = $data['id'];
+
+        foreach ($data as $key => $value) {
+            if ($value == '') {
+                unset($data[$key]);
+            }
+        }
+
+        $postsModel = new PostsModel();
+
+        if (sizeof($data) > 1) {
+            $postsModel->save($data);
+        }
+
+        $res = $this->uploadImages($postID , $files, $isUpdate);
+
+        return $res;
     }
 
     public function deletePost(){                //Return REDIRECT
@@ -137,6 +155,8 @@ class Panel extends BaseAdminController
 		return redirect()->to(base_url().'/admin/panel?delete=err');
     }
 
+    // ----------------------------------------------------------------------------------------------
+    
     //UTILITIES
     private function fileValidation($file) {     //Return BOOLEAN
 		if ($file->getSize() < $this->maxSize && in_array($file->getExtension(), $this->allowedExtensions)) {
@@ -146,11 +166,20 @@ class Panel extends BaseAdminController
 		}
 	}
 
-    public function uploadImages($postID, $files){ //Return STRING ('success' || 'file_err')
+    public function uploadImages($postID, $files, $isUpdate = false){ //Return STRING ('success' || 'file_err')
        
         if($files){
             $images = array_slice($files['images'],0,$this->maxImages);
             $imageModel = new ImagesModel();
+            $uploadedImages = $imageModel->where('post_id', $postID)->findColumn('url');
+
+            if ($isUpdate && $uploadedImages) {
+                foreach ($uploadedImages as $url) {
+                    $this->deleteFile($url);
+                }
+                $imageModel->deleteByPostId($postID);
+            }
+
             foreach($images as $key => $img){
 
                 if ($img->isValid() && !$img->hasMoved() && $this->fileValidation($img)){
