@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Equipo</label>
-                        <input type="text" class="form-control" id="team" name="team" placeholder="Estado.." required>
+                        <input type="text" class="form-control" id="team" name="team" placeholder="Equipo.." required>
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="newpostform_images">Imágenes</label>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Equipo</label>
-                        <input type="text" class="form-control" id="team" name="team" placeholder="Estado.." >
+                        <input type="text" class="form-control" id="team" name="team" placeholder="Equipo.." >
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <label for="newpostform_images">Imágenes</label>

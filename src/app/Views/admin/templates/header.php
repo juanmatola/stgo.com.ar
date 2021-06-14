@@ -12,7 +12,7 @@
 <body id="page-top">
         <nav class="navbar navbar-expand navbar-light bg-light shadow mb-4">
           <div class="container">
-            <a class="navbar-brand" href="#">Administración</a>
+            <a class="navbar-brand" href="#">Estudio STGO</a>
             
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
