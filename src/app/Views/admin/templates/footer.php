@@ -11,8 +11,8 @@
         <!-- End of Footer -->
 
     <!-- Scroll to Top Button-->
-    <a class="btn btn-outline-secondary rounded scrolltop_btn" href="#page-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M6 18H18V20H6zM12 4L6 10 11 10 11 16 13 16 13 10 18 10z"></path></svg>
+    <a class="btn btn-outline-secondary scrolltop_btn" href="#page-top" style="padding-left: 5px;padding-right: 5px;padding-top:2px;padding-bottom:4px; border-radius: 50%;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M3,19h18c0.372,0,0.713-0.207,0.886-0.536c0.173-0.329,0.148-0.727-0.063-1.033l-9-13c-0.373-0.539-1.271-0.539-1.645,0 l-9,13c-0.212,0.306-0.236,0.704-0.063,1.033C2.287,18.793,2.628,19,3,19z"></path></svg>
     </a>
 
     <!-- Post add Modal -->
@@ -69,33 +69,44 @@
     <!-- Update Post Modal -->
 
     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateModalLabel">Editar Post</h5>
+                <h5 class="modal-title" id="updateModalLabel">Editar Proyecto <small class="text-muted small fw-light">(Deje sin completar los campos que no quiera modificar)</small></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form action="<?php echo base_url().'/admin/panel/save'; ?>" method="post" id="updatepostform" enctype="multipart/form-data">
-                    <div class="form-group">
+            <div class="modal-body container">
+                <form action="<?php echo base_url().'/admin/panel/save'; ?>" class="row h-100 align-items-center" method="post" id="newpostform" enctype="multipart/form-data">
+                    <div class="col-12 col-md-6 my-3">
                         <label for="title">Título</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Un título para tu post.." required>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Título.." required>
                     </div>
-                    <div class="form-group">
-                        <label for="title">Categoría</label>
-                        <select class="form-control" name="category" require>
-                            <option value="1">Ilustración Infantil</option>
-                            <option value="2">Ilustración Aplicada</option>
-                            <option value="3">Papelería</option>
-                        </select>
+                    <div class="col-12 col-md-6 my-3">
+                        <label for="title">Ubicación</label>
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Ubicación.." required>
                     </div>
-                    <div class="form-group">
+                    <div class="col-12 col-md-6 my-3">
+                        <label for="title">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="startdate" name="startdate" required>
+                    </div>
+                    <div class="col-12 col-md-6 my-3">
+                        <label for="title">Estado de Obra</label>
+                        <input type="text" class="form-control" id="status" name="status" placeholder="Estado.." required>
+                    </div>
+                    <div class="col-12 col-md-6 my-3">
+                        <label for="title">Equipo</label>
+                        <input type="text" class="form-control" id="team" name="team" placeholder="Estado.." required>
+                    </div>
+                    <div class="col-12 col-md-6 my-3">
+                        <label for="newpostform_images">Imágenes</label>
+                        <br>
+                        <input type="file" class="form-control-file" id="newpostform_images" name="images[]" accept="image/*" required multiple>
+                        <br>
+                        <small class="text-muted">Se reemplazarán todas las imágenes previamente cargadas por las nuevas</small>
+                    </div>
+                    <div class="form-group my-3">
                         <label for="description">Descripción</label>
-                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Breve descripción de tu post.."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="image">Imagenes</label>
-                        <input type="file" class="form-control-file" id="image1" name="images[]" accept="image/*" multiple>
+                        <textarea class="form-control" id="description" name="description" rows="4" placeholder="Memoria descriptiva del proyecto.."></textarea>
                     </div>
                 </form>
             </div>
