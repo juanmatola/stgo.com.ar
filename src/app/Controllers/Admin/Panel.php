@@ -122,8 +122,10 @@ class Panel extends BaseAdminController
             $postsModel->save($data);
         }
 
-        $res = $this->uploadImages($postID , $files, $isUpdate);
-
+        if ($files['images'][0]->isValid()) {
+            $res = $this->uploadImages($postID , $files, $isUpdate);
+        }
+     
         return $res;
     }
 
