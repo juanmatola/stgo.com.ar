@@ -26,7 +26,7 @@
                 </button>
             </div>
             <div class="modal-body container">
-                <form action="#<!--?php echo base_url().'/admin/panel/save'; ?-->" class="row h-100 align-items-center" method="post" id="newpostform" enctype="multipart/form-data">
+                <form action="<?php echo base_url().'/admin/panel/save'; ?>" class="row h-100 align-items-center" method="post" id="newpostform" enctype="multipart/form-data">
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Título</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Título.." required>
