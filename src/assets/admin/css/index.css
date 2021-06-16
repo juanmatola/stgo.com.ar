@@ -6,6 +6,18 @@ html {
     right: 15px;
     bottom: 15px;
 }
+.form_loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    display: none;
+}
 #infoModalBody{
     text-align: center;
 }

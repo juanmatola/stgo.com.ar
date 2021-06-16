@@ -26,7 +26,7 @@
                 </button>
             </div>
             <div class="modal-body container">
-                <form action="<?php echo base_url().'/admin/panel/save'; ?>" class="row h-100 align-items-center" method="post" id="newpostform" enctype="multipart/form-data">
+                <form action="#<!--?php echo base_url().'/admin/panel/save'; ?-->" class="row h-100 align-items-center" method="post" id="newpostform" enctype="multipart/form-data">
                     <div class="col-12 col-md-6 my-3">
                         <label for="title">Título</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Título.." required>
@@ -55,6 +55,11 @@
                     <div class="form-group my-3">
                         <label for="description">Descripción</label>
                         <textarea class="form-control" id="description" name="description" rows="4" placeholder="Memoria descriptiva del proyecto.."></textarea>
+                    </div>
+                    <div class="form_loader">
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -107,6 +112,11 @@
                     <div class="form-group my-3">
                         <label for="description">Descripción</label>
                         <textarea class="form-control" id="description" name="description" rows="4" placeholder="Memoria descriptiva del proyecto.."></textarea>
+                    </div>
+                    <div class="form_loader">
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </div>
                 </form>
             </div>
