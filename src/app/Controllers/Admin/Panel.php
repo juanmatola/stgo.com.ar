@@ -9,8 +9,7 @@ class Panel extends BaseAdminController
 	private $uploadPostPath = './writable/uploads/portfolio/';
 	private $allowedExtensions = array('jpg','jpeg','png');
 	private	$maxSize = 3000000; // Bytes 
-	private	$maxImages = 16; // Units
-
+	private	$maxImages = 20; // Units
 
     public function index(){                      //INDEX
         \session_start();
