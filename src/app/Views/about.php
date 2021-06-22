@@ -12,7 +12,7 @@
     </div>
     
     <main class="container">
-      <h1 class="text-center my-5">Estudio</h1>
+      <h1 class="text-center my-5 py-3">Estudio</h1>
       <div class="row">
         <div class="col-12 col-md-6">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, debitis ratione minima temporibus fugiat velit explicabo quam unde aliquam quas nostrum accusamus ex molestias. Maiores odio asperiores tenetur. Sed non dolorum aut quisquam consequatur vel cumque, similique nostrum ratione perferendis minus id exercitationem mollitia quaerat explicabo fugiat? At, sit est!</p>
@@ -31,7 +31,7 @@
     <section id="team" class="team content-section">
       <div class="container">
 
-        <h2 class="h1 text-center my-5 py-3">Nuestro Equipo</h2>
+        <h2 class="h1 text-center my-5">Nuestro Equipo</h2>
         <div class="row">
 
           <div class="col-md-4">
