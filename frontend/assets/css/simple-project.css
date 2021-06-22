@@ -75,6 +75,13 @@
   height: 100%;
   width: 100%;
 }
+#galleryModal .modal-title{
+  display: none;
+}
+#galleryModal .modal-header{
+  border: none;
+  padding-right: 42px;
+}
 .swiper-button-next:after, .swiper-button-prev:after{
   text-shadow: 0 0 3px #fff;
   background-color: white;
@@ -82,11 +89,9 @@
   padding: 10px 10px 10px 10px;
   font-size: 20px !important;
 }
-
 .goverlay{
   background-color: white !important;
 }
-
 .glightbox-clean .gclose path, .glightbox-clean .gnext path, .glightbox-clean .gprev path {
   fill: var(--color--primary) !important;
 }
@@ -116,5 +121,8 @@ body > div:nth-child(3) > div > div.col-12.col-md-6.pe-md-4 > table > tbody > tr
   }
   .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
     right: 10px !important;
+  }
+  #galleryModal .modal-header{
+    padding-right: 16px;
   }
 }
