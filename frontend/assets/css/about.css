@@ -3,7 +3,7 @@
     padding-right: 32px !important; 
 }
 .carousel{
-    height: 80vh;
+    height: calc(100vh - 144px);
     overflow-y: hidden;
 }
 .team-member {
