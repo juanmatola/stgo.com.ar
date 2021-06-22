@@ -95,7 +95,9 @@
   padding: 10px 10px 10px 10px !important;
   background-color: white !important;
 }
-
+.table th {
+  width: 120px !important;
+}
 @media(max-width: 768px ) {
   .swiper-pagination-fraction{
     left: 50% !important;
