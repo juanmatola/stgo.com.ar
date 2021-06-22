@@ -98,6 +98,10 @@
 .table th {
   width: 120px !important;
 }
+body > div:nth-child(3) > div > div.col-12.col-md-6.pe-md-4 > table > tbody > tr:nth-child(1){
+  border-top: solid 1px;
+  border-color: inherit;
+}
 @media(max-width: 768px ) {
   .swiper-pagination-fraction{
     left: 50% !important;
