@@ -83,6 +83,19 @@
   font-size: 20px !important;
 }
 
+.goverlay{
+  background-color: white !important;
+}
+
+.glightbox-clean .gclose path, .glightbox-clean .gnext path, .glightbox-clean .gprev path {
+  fill: var(--color--primary) !important;
+}
+.glightbox-clean .gclose, .glightbox-clean .gnext, .glightbox-clean .gprev {
+  border-radius: 50px !important;
+  padding: 10px 10px 10px 10px !important;
+  background-color: white !important;
+}
+
 @media(max-width: 768px ) {
   .swiper-pagination-fraction{
     left: 50% !important;
