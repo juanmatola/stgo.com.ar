@@ -4,18 +4,13 @@
         </footer>
     <?php endif; ?>
     
-        <!-- Contact Modal -->
-        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-12 col-md-6 card-image">
-                            <!-- image -->
-                        </div>
-                        
-                        <div class="col-12 col-md-6">
+                        <div class="col-12">
                             <div class="modal-header">
                                 <h5 class="modal-title h2" id="contactModalLabel">Contactanos</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -39,7 +34,7 @@
                                     <span class="icons"><i class="fab fa-instagram"></i></span>
                                     <div class="address text-left"> 
                                         <span>Instagram</span>
-                                        <p><a href="https://www.instagram.com/estudiostgo/" style="color: inherit; text-decoration: none;" target="_blank">/estudiostgo</a></p>
+                                        <p><a href="https://www.instagram.com/estudiostgo/" style="color: inherit; text-decoration: none;" target="_blank">@estudiostgo</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -48,8 +43,8 @@
                 </div>
             </div>
         </div>
-        </div>
-        <!-- Contact Modal --> 
+    </div>
+    <!-- Contact Modal --> 
         
         <script src="<?= base_url() ;?>/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <?php if($page == 'simple-project'): ?>
