@@ -36,6 +36,7 @@
     left: 0;
     padding-top: 25px;
     opacity: 0;
+    display: none;
 }
 .index__menu ul{
     display: flex;
@@ -72,6 +73,7 @@
         left: 0;
         top: 55%;
         overflow-y: visible;
+        display: block;
     }
     .index__menu ul{
         text-align: center;
