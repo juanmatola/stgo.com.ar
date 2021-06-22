@@ -6,6 +6,29 @@
         </ul>
     </nav>
 
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top d-none d-md-flex">
+        <a class="navbar-brand" href="index.html">
+          <div class="navbar-logo">
+          </div>
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 25 25"><path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"></path></svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Estudio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contacto</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
     <div class="index__container">
         <div class="index__container--logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1417.32 1417.32" style="enable-background:new 0 0 1417.32 1417.32;" xml:space="preserve">
