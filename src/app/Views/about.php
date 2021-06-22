@@ -31,7 +31,7 @@
     <section id="team" class="team content-section">
       <div class="container">
 
-        <h2 class="h1 text-center my-5">Nuestro Equipo</h2>
+        <h2 class="h1 text-center my-5 py-3">Nuestro Equipo</h2>
         <div class="row">
 
           <div class="col-md-4">
