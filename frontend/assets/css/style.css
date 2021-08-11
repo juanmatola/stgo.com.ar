@@ -67,6 +67,10 @@ a{
     color: var(--color--tertiary) !important;
     font-weight: 900;
 }
+.navbar .nav-link{
+    font-weight: 900;
+    font-size: 1.1rem;
+}
 /* Contact modal */
 #contactModal .modal-content{
     border-radius: 30px;
