@@ -53,7 +53,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
+            <li class="nav-item d-none">
               <a class="nav-link <?php echo $page === 'about' ? 'active' : ''; ?>" href="<?= base_url() ?>/estudio">Estudio</a>
             </li>
             <li class="nav-item">
