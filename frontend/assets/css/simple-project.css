@@ -92,6 +92,9 @@
 .goverlay{
   background-color: white !important;
 }
+.glightbox-clean .gslide-media{
+  box-shadow: none !important;
+}
 .glightbox-clean .gclose path, .glightbox-clean .gnext path, .glightbox-clean .gprev path {
   fill: var(--color--primary) !important;
 }
